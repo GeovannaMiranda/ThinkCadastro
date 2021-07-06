@@ -1,0 +1,11 @@
+.body{
+    color: white;
+    background: #007bff;
+    height: 100vh;
+   
+}
+.efeito,efeito-1{
+    margin-top: 30px;
+    background-color: white;
+    color: #007bff;
+}
