@@ -1,6 +1,22 @@
 .font{
     font-family: 'Roboto', sans-serif;
 }
-.body{
+#altura{
+    margin-top: 50px;
+
+}
+.fundo{
+    margin-top: 20px;
+    background: #fff;
+    height: 100vh;
+}
+.Grupo1{
     padding-top: 20px;
+    margin-top: 20px;
+    width: 50%;
+    height: 50%;
+}
+.salvar{
+    margin-top: 20px;
+    border-radius: 0%;
 }

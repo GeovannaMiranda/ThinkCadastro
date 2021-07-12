@@ -1,6 +1,58 @@
 .font{
     font-family: 'Roboto', sans-serif;
+
 }
-.body{
-    padding-top: 20px;
+.fundo{
+    padding-top: 30px;
+    background: #fff;
+    height: 50vh;
+}
+#altura{
+    margin-top: 30px;
+}
+.Grupo4{
+    margin-top: 20px;
+    padding-top: 15px;
+    width: 100%;
+}
+@media only screen and (max-width: 576px) {
+    .corpo{
+        padding-top: 20px;
+    }
+    .Grupo4{
+        margin-top: 15px;
+        padding-top: 15px;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .corpo{
+        padding-top: 20px;
+    }
+    .Grupo4{
+        margin-top: 15px;
+        padding-top: 15px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .corpo{
+        padding-top: 10px;
+    }
+    .Grupo4{
+        margin-top: 15px;
+        padding-top: 15px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .corpo{
+        padding-top: 10px;
+    }
+    .Grupo4{
+        margin-top: 15px;
+        padding-top: 15px;
+        width: 100%;
+    }
 }

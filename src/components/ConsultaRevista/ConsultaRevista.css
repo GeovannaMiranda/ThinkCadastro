@@ -1,6 +1,9 @@
 .font{
     font-family: 'Roboto', sans-serif;
 }
-.body{
+.fundo{
     padding-top: 20px;
+}
+.buscar{
+    margin-top: 0px;
 }

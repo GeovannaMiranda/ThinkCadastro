@@ -1,9 +1,123 @@
 .font{
     font-family: 'Roboto', sans-serif;
 }
-.body{
-    padding-top: 20px;
+.fundo{
+    padding-top: 60px;
+    background: #fff;
+    height: 50vh;
+    
 }
-.botao{
-    margin-top: 23px;
+.Grupo1{
+    padding-top: 20px;
+    margin-top: 20px;
+    width: 100%;
+    
+}
+.Grupo2{
+    padding-top: 20px;
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+}
+#altura{
+    margin-top: 30px;
+
+}
+.sele{
+    padding-top: 20px;
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+
+}
+.outro{
+    padding-top: 20px;
+    margin-top: 20px;
+    width: 50%;
+}
+.active{
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.salvar{
+    margin-top: 40px;
+    padding-top: 50%;
+    background-color: #007bff;
+    color: #fff;
+    margin: 15px 15px 0px;
+    display: flex;
+    align-self: flex-end;    
+    width: 15%;
+    margin-left: 84%;
+}
+@media only screen and (max-width: 576px) {
+    
+    .active{
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+    
+    .botao{
+        margin-top: 23px;
+        background-color: #007bff;
+        color: #fff;
+        margin-right: 20px;
+        margin-left: 79%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .active{
+        padding-top: 30px;
+        margin-top: 30px;
+    }
+    
+    .botao{
+        margin-top: 23px;
+        background-color: #007bff;
+        color: #fff;
+        margin-right: 20px;
+        margin-left: 79%;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .Grupo4{
+        padding: 15px;
+        margin: 15px;
+        width: 100%;
+        height: 100%;
+    }
+    .Grupo4 #select{
+        padding: 15px;
+        margin: 15px;
+        width: 100%;
+        height: 100%;
+    }
+    .active{
+        padding-top: 5px;
+        margin-top: 5px;
+    }
+    
+    .botao{
+        margin-top: 30px;
+        padding: 30px;
+        color: #fff;
+        width: 20%;
+        height: 60%;
+        margin-left: -100%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .active{
+        padding-top: 30px;
+        margin-top: 30px;
+    }
+    
+    .botao{
+        margin-top: 23px;
+        background-color: #007bff;
+        color: #fff;
+        margin-right: 20px;
+        margin-left: 79%;
+    }
 }

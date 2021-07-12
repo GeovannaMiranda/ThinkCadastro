@@ -2,30 +2,27 @@ import React from 'react'
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import CadastroFornecedor from './components/cadastrofornecedor/CadastroFornecedor';
 import Login from './components/login/Login';
-import MenuSuperior from './components/menuSuperior/MenuSuperior';
+
+import CadastroGrupoFor from './components/CadastroGrupoFor/CadastroGrupoFor';
+import CadastroGrupoVin from './components/CadastroGrupoVin/CadastroGrupoVin'
 import CadastroRevista from './components/CadastroRevista/CadastroRevista';
-import CadastroGrupoVin from './components/CadastroGrupoVin/CadastroGrupoVin';
-import ConsultaRevista from './components/ConsultaRevista/ConsultaRevista';
 import ConsultaGrupoVin from './components/ConsultaGrupoVin/ConsultaGrupoVin';
 import ConsultaGrupoFor from './components/ConsultaGrupoFor/ConsultaGrupoFor';
-import login from './components/login/Login';
+import ConsultaRevista from './components/ConsultaRevista/ConsultaRevista';
 
 export default function Routes(){
     return(
         <BrowserRouter>
-          <Switch>
-            
-            {/*<Route path = "/cadastrofornecedor" exact component={CadastroFornecedor}/>*/}
-            {/*<Route path = "/" exact component={CadastroRevista}/>*/}
-            {/*<Route path = "/" exact component={CadastroGrupoVin}/>*/}
-            {/*<Route path = "/" exact component={ConsultaGrupoVin} */}
-            {/*<Route path = "/" exact component={ConsultaGrupoFor}*/}
-            {/*<Route path = "/" exact component={ConsultaRevista}/>*/}
+          <Switch>  
             <Route path = "/" exact component={Login}/>
-            <Route path = "/menusuperior" component={MenuSuperior}/>
-            
-
-          </Switch>
+            <Route path = "/cadastrofornecedor" component={CadastroFornecedor}/>
+            <Route path = "/cadastrogrupofor" component={CadastroGrupoFor}/>
+            <Route path = "/cadastrogrupovin" component={CadastroGrupoVin}/>
+            <Route path = "/cadastrorevista" component={CadastroRevista}/>
+            <Route path = "/consultagrupovin" component={ConsultaGrupoVin}/>
+            <Route path = "/consultagrupofor" component={ConsultaGrupoFor}/>
+            <Route path = "/consultarevista" component={ConsultaRevista}/>
+            </Switch>
         </BrowserRouter>
     );
    

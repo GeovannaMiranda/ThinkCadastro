@@ -1,22 +1,44 @@
 a .imagen {
-    width: 18vh;
-    height: 11vh;
+    width: 40vh;
+    height: 50vh;
 }
 
 nav {
     background: #1E90FF;
 
 }
+.material-icons {
+    vertical-align: middle;
+    padding: 10 5% 10 10;
+    margin: 30 50% 100;
+}
+
+
+#BotaoSair{
+    text-decoration: white; 
+    margin-left: 100px;
+    background: #1E90FF;
+    color: white;
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
 
 @media only screen and (min-width: 768px) {
     nav {
         background: #1E90FF;
-        height: 13vh;
+        height: 20vh;
     }
 
 
 }
-
+.menu{
+    left: 0%;
+    margin: -60px 55px 15px;
+}
 nav .Hamburger {
     color: white;
     border: 2px solid white;
@@ -34,40 +56,18 @@ div .nav-link {
 
 
 @media only screen and (min-width: 768px) {
-    div .navbar {
-        background: #1E90FF;
-        margin-top: 0px;
-        -webkit-box-shadow: 0px 0px 5px black; 	
-        -moz-box-shadow: 0px 0px 5px black; 	
-                box-shadow: 0px 0px 5px black; 	
-    }
+    
+
 }
-
-
-.material-icons {
-    vertical-align: middle;
-    padding: 0 5% 0 0;
-}
-
-
-
-
 /* ---------------------------------------------------
    SAIR
 ----------------------------------------------------- */
 
-#BotaoSair {
-    text-align: center;
-    text-decoration: white; 
-    list-style:none;
-    background: #1E90FF;
-    color: white;
-    border-radius: 5px;
-    top: 100%;
-    width: 100%;
-}
-
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 576px) {
+    a .imagen {
+        width: 15vh;
+        height: 10vh;
+    }
     #BotaoSair {
         text-align: center;
         text-decoration: none; 
@@ -75,9 +75,9 @@ div .nav-link {
         background: #1E90FF;
         color: white;
         border-radius: 5px;
-        width: 10%;
+        width: 100%;
         position: relative;
-        margin-left: 70%;
+        margin-left: 50px;
     }
 
 
@@ -85,18 +85,128 @@ div .nav-link {
         vertical-align: middle;
         padding: 0 10% 0 0;
     }
+    #BotaoSair .btn {
+        color: white;
+    }
+    
+    #BotaoSair .btn:hover {
+        color: black;
+        background-color: #1E90FF;
+    }
+    
+    #BotaoSair .material-icons {
+        vertical-align: middle;
+        position: relative;
+    }
 }
 
-#BotaoSair .btn {
-    color: white;
+
+
+@media only screen and (min-width: 768px) {
+    div .navbar {
+        background: #1E90FF;
+        margin-top: 0px;
+        -webkit-box-shadow: 0px 0px 5px black; 	
+        -moz-box-shadow: 0px 0px 5px black; 	
+        box-shadow: 0px 0px 5px black; 	
+    }
+    a .imagen {
+        width: 15vh;
+        height: 10vh;
+    }
+    #BotaoSair {
+        text-align: center;
+        text-decoration: none; 
+        list-style:none;
+        background: #1E90FF;
+        color: white;
+        border-radius: 5px;
+        width: 80%;
+        position: relative;
+        margin-left: 50px;
+    }
+
+
+    .material-icons {
+        vertical-align: middle;
+        padding: 0 10% 0 0;
+    }
+    #BotaoSair .btn {
+        color: white;
+    }
+    
+    #BotaoSair .btn:hover {
+        color: black;
+        background-color: #1E90FF;
+    }
+    
+    #BotaoSair .material-icons {
+        vertical-align: middle;
+        position: relative;
+    }
 }
 
-#BotaoSair .btn:hover {
-    color: black;
-    background-color: #1E90FF;
-}
 
-#BotaoSair .material-icons {
-    vertical-align: middle;
-    position: relative;
+@media only screen and (max-width: 992px) {
+    #BotaoSair {
+        text-align: center;
+        text-decoration: none; 
+        list-style:none;
+        background: #1E90FF;
+        color: white;
+        border-radius: 5px;
+        width: 100%;
+        position: relative;
+        margin-left: 50px;
+    }
+
+
+    .material-icons {
+        vertical-align: middle;
+        padding: 0 10% 0 0;
+    }
+    #BotaoSair .btn {
+        color: white;
+    }
+    
+    #BotaoSair .btn:hover {
+        color: black;
+        background-color: #1E90FF;
+    }
+    
+    #BotaoSair .material-icons {
+        vertical-align: middle;
+        position: relative;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    #BotaoSair {
+        text-align: center;
+        text-decoration: none; 
+        list-style:none;
+        background: #1E90FF;
+        color: white;
+        border-radius: 5px;
+        width: 100%;
+        position: relative;
+        margin-left: 70px;
+    }
+
+    .material-icons {
+        vertical-align: middle;
+        padding: 0 10% 0 0;
+    }
+    #BotaoSair .btn {
+        color: white;
+    }
+    
+    #BotaoSair .btn:hover {
+        color: black;
+        background-color: #1E90FF;
+    }
+    
+    #BotaoSair .material-icons {
+        vertical-align: middle;
+        position: relative;
+    }
 }
