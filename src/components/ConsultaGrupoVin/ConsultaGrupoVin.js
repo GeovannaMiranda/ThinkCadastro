@@ -24,33 +24,34 @@ const ConsultaGrupoVin = (props) => {
                     <Form>
                         <Row>
                             <Col>
-                                <FormGroup>
-                                    <DropdownToggle caret onClick={grupovinfor} color="primary" className="botao">
-                                        Buscar
-                                    </DropdownToggle>
-
-                                </FormGroup>
+                                <center>
+                                    <FormGroup  >
+                                        <Button onClick={grupovinfor} className="botao" color="primary">Buscar</Button> {/* chamando a função handlelogin que é de direcionamento das rotas */}
+                                    </FormGroup>
+                                </center>
                             </Col>
                         </Row>
-                       
                     </Form>
                     <Row>
-                        <Table>
-                            <thead>
-                                <tr className="tabela">
-                                    <th>Cód</th>
-                                    <th>Descrição</th>
-                                </tr>
-                            </thead>
-                                {grupovin.map((grupovin, idx) =>(
-                                    
-                                    <tbody key={idx} grupovin={grupovin}>
-                                        <td>{grupovin.codigogrupo}</td>
-                                        <td>{grupovin.descricao}</td>
-                                    </tbody>
-                                ))}
-                            
-                        </Table>
+                        <Form id="altura">
+                            <Col sm="12" md={{ size: 6, offset: 3 }} >
+                                <Table bordered style={{ margin: '5% 0 0 0' }}>
+                                    <thead>
+                                        <tr className="tabela">
+                                            <th>Cód</th>
+                                            <th>Descrição</th>
+                                        </tr>
+                                    </thead>
+                                    {grupovin.map((grupovin, idx) => (
+
+                                        <tbody key={idx} grupovin={grupovin}>
+                                            <td>{grupovin.codigogrupo}</td>
+                                            <td>{grupovin.descricao}</td>
+                                        </tbody>
+                                    ))}
+                                </Table>
+                            </Col>
+                        </Form>
                     </Row>
                 </Container>
             </div>

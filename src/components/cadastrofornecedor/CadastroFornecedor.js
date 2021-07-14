@@ -237,7 +237,7 @@ const CadastroFornecedor = (props) => {
                 <Container className="container-theme" fluid={true}>
                     <Form>
                         <Row>
-                            <Col>
+                            <Col sm={12} md={4} lg={4} xl={4}>
                                 <FormGroup >
                                     <CssTextField
                                         onChange={onChange5}
@@ -248,7 +248,7 @@ const CadastroFornecedor = (props) => {
                                     />
                                 </FormGroup>
                             </Col>
-                            <Col>
+                            <Col sm={12} md={4} lg={4} xl={4}>
                                 <FormGroup>
                                     <CssTextField
                                         onChange={onChange6}
@@ -259,7 +259,7 @@ const CadastroFornecedor = (props) => {
                                     />
                                 </FormGroup>
                             </Col>
-                            <Col>
+                            <Col sm={12} md={4} lg={4} xl={4}>
                                 <FormGroup>
                                     <CssTextField
                                         onChange={onChange7}
@@ -275,7 +275,7 @@ const CadastroFornecedor = (props) => {
 
                     <Form id="altura">
                         <Row>
-                            <Col>
+                            <Col sm={12} md={4} lg={2} xl={2}>
                                 <FormGroup>
                                     <CssTextField
                                         onChange={onChange8}
@@ -286,7 +286,7 @@ const CadastroFornecedor = (props) => {
                                     />
                                 </FormGroup>
                             </Col>
-                            <Col>
+                            <Col sm={12} md={4} lg={2} xl={2}>
                                 <FormGroup >
                                     <FormControl className="sele">
                                         <InputLabel  id="select-label">Seguimento</InputLabel>
@@ -303,7 +303,7 @@ const CadastroFornecedor = (props) => {
                                     </FormControl>
                                 </FormGroup>
                             </Col>
-                            <Col >
+                            <Col sm={12} md={4} lg={2} xl={2}>
                                 <FormGroup >
                                     <FormControl className="sele">
                                         <InputLabel >Seguimento Gestão</InputLabel>
@@ -315,7 +315,7 @@ const CadastroFornecedor = (props) => {
                                             <MenuItem value="">Selecione Opção</MenuItem>
                                             <MenuItem value="1">Modinha</MenuItem>
                                             <MenuItem value="2">Plus Size</MenuItem>
-                                            <MenuItem value="3">Jeans</MenuItem>
+                                            <MenuItem value="2">Jeans</MenuItem>
                                             <MenuItem value="4">Acessórios</MenuItem>
                                             <MenuItem value="5">Camisaria</MenuItem>
                                             <MenuItem value="6">Fitness</MenuItem>
@@ -327,7 +327,7 @@ const CadastroFornecedor = (props) => {
                                 </FormGroup>
                             </Col>
 
-                            <Col >
+                            <Col sm={12} md={4} lg={2} xl={2}>
                                 <FormGroup >
                                     <FormControl className="sele" >
                                         <InputLabel  id="select-label">Revista/Paralelo</InputLabel>
@@ -345,7 +345,7 @@ const CadastroFornecedor = (props) => {
                                     </FormControl>
                                 </FormGroup>
                             </Col>
-                            <Col>
+                            <Col sm={12} md={4} lg={2} xl={2}>
                                 <FormGroup >
                                     <FormControl className="sele" >
                                         <InputLabel id="select-label">Revista</InputLabel>
@@ -362,7 +362,7 @@ const CadastroFornecedor = (props) => {
                                     </FormControl>
                                 </FormGroup>
                             </Col>
-                            <Col>
+                            <Col sm={12} md={4} lg={2} xl={2}>
                                 <FormGroup>
                                     <CssTextField
                                         onChange={onChange9}
@@ -378,7 +378,7 @@ const CadastroFornecedor = (props) => {
 
                     <Form id="altura">
                         <Row>
-                            <Col>
+                            <Col sm={12} md={4} lg={4} xl={4}>
                                 <FormGroup>
                                     <CssTextField
                                         onChange={onChange10}
@@ -389,7 +389,7 @@ const CadastroFornecedor = (props) => {
                                     />
                                 </FormGroup>
                             </Col>
-                            <Col>
+                            <Col sm={12} md={4} lg={4} xl={4}>
                                 <FormGroup >
                                     <CssTextField
                                     onChange={onChange11}
@@ -400,9 +400,9 @@ const CadastroFornecedor = (props) => {
                                     />
                                 </FormGroup>
                             </Col>
-                            <Col>
+                            <Col sm={12} md={4} lg={3} xl={2}>
                                 <FormGroup >
-                                    <FormControl className="outro" >
+                                    <FormControl className="sele" >
                                         <InputLabel  id="select-label">Grupo</InputLabel>
                                         <Select
                                             labelId="select-label"
@@ -419,7 +419,7 @@ const CadastroFornecedor = (props) => {
                             </Col>
                             <Form id="altura">
                                 <Row>
-                                    <Col>
+                                    <Col sm={12} md={4} lg={4} xl={4}>
                                         <FormGroup >
                                             <CssTextField
                                                 onChange={onChange12}
@@ -430,7 +430,7 @@ const CadastroFornecedor = (props) => {
                                             />
                                         </FormGroup>
                                     </Col>
-                                    <Col>
+                                    <Col sm={12} md={4} lg={4} xl={4}>
                                         <FormGroup >
                                             <CssTextField
                                                 onChange={onChange13}
@@ -452,7 +452,7 @@ const CadastroFornecedor = (props) => {
                             </Form>
                         </Row>
                         <Row>
-                            <Col>
+                            <Col sm={12}>
                                 <Button onClick={insertcadfornecedor} className="salvar" color="primary">Salvar</Button>{' '}
                             </Col>
                         </Row>

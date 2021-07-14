@@ -7,6 +7,18 @@ import MenuSuperior from '../menuSuperior/MenuSuperior'
 import { withStyles } from "@material-ui/core/styles";
 import TextField from '@material-ui/core/TextField';
 import { FormControl } from '@material-ui/core';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { ptBR } from '@material-ui/core/locale';
+import moment from 'moment';
+
+import Grid from '@material-ui/core/Grid';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+    MuiPickersUtilsProvider,
+    KeyboardTimePicker,
+    KeyboardDatePicker,
+} from '@material-ui/pickers';
 
 const CssTextField = withStyles({
     root: {
@@ -42,6 +54,32 @@ const CadastroRevista = (props) => {
     const [datlancamento, setDatlancamento] = useState([]);
     const [datvenda, setDatvenda] = useState([]);
     const [datprelancamento, setDatprelancamento] = useState([]);
+    const [selectedDate, setSelectedDate] = React.useState(new Date());
+    const [selectedDate2, setSelectedDate2] = React.useState(new Date());
+    const [selectedDate3, setSelectedDate3] = React.useState(new Date());
+
+    const handleDateChange = (date) => {
+        setSelectedDate(date);
+        console.log(date);
+    };
+    const handleDateChange2 = (date) => {
+        setSelectedDate2(date);
+        console.log(date);
+    };
+    const handleDateChange3 = (date) => {
+        setSelectedDate3(date);
+        console.log(date);
+    };
+
+    const datainicial = moment(selectedDate).format('YYYYMMDD')
+    console.log(datainicial)
+
+    const datainicial2 = moment(selectedDate2).format('YYYYMMDD')
+    console.log(datainicial2)
+
+    const datainicial3 = moment(selectedDate3).format('YYYYMMDD')
+    console.log(datainicial3)
+
 
     function onChange1(ev) {
         const {
@@ -60,36 +98,13 @@ const CadastroRevista = (props) => {
         console.log(value);
     }
 
-    function onChange3(ev) {
-        const {
-            nome, value
-        } = ev.target;
-        setDatlancamento(value);
-        console.log(value);
-    }
-
-    function onChange4(ev) {
-        const {
-            nome, value
-        } = ev.target;
-        setDatvenda(value);
-        console.log(value);
-    }
-
-    function onChange5(ev) {
-        const {
-            nome, value
-        } = ev.target;
-        setDatprelancamento(value);
-        console.log(value);
-    }
-
     const insertrevista = useCallback(() => {
 
-        axios.post('http://192.168.0.62:3334/InsertRevFor251/' + codrevista + '/' + nomrevista + '/' + datlancamento + '/' + datvenda + '/' + datprelancamento + '')
+        axios.post('http://192.168.0.62:3334/InsertRevFor251/' + codrevista + '/' + nomrevista + '/' + datainicial + '/' + datainicial + '/' + datainicial + '')
+        console.log(codrevista, nomrevista, datainicial, datainicial, datainicial);
     },
 
-        [codrevista, nomrevista, datlancamento, datvenda, datprelancamento]);
+        [codrevista, nomrevista, datainicial, datainicial, datainicial]);
 
 
 
@@ -100,9 +115,9 @@ const CadastroRevista = (props) => {
             <div className="font fundo">
                 <Container className="themed-container" fluid={true}>
                     <Form id="altura">
-                    
+
                         <Row>
-                            <Col>
+                            <Col sm={12} md={6} lg={6} xl={6}>
                                 <FormGroup>
                                     <CssTextField
                                         onChange={onChange1}
@@ -113,7 +128,7 @@ const CadastroRevista = (props) => {
                                     />
                                 </FormGroup>
                             </Col>
-                            <Col>
+                            <Col sm={12} md={6} lg={6} xl={6}>
                                 <FormGroup>
                                     <CssTextField
                                         onChange={onChange2}
@@ -128,48 +143,82 @@ const CadastroRevista = (props) => {
                     </Form>
                     <Form id="altura" >
                         <Row>
-                            <Col>
-                                <FormGroup >
-                                    <FormControl className="sele">
-                                        <CssTextField
-                                            onChange={onChange3}
-                                            className="linha"
-                                            id="standard-basic"
-                                            label="Data Lançamento"
-                                            type="Text"
-                                        />
-                                    </FormControl>
-                                </FormGroup>
-                            </Col>
-                            <Col>
-                                <FormGroup >
-                                    <FormControl className="sele">
-                                        <CssTextField
-                                            onChange={onChange4}
-
-                                            id="standard-basic"
-                                            label="Data Venda"
-                                            type="Text"
-                                        />
-                                    </FormControl>
-                                </FormGroup>
-                            </Col>
-                            <Col>
+                            <Col sm={12} md={12} lg={4} xl={4}>
                                 <FormGroup>
-                                    <FormControl className="sele">
-                                        <CssTextField
-                                            onChange={onChange5}
-                                            className="linha"
-                                            id="standard-basic"
-                                            label="Data Pré Lançamento"
-                                            type="Text"
-                                        />
-                                    </FormControl>
+                                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                        <Grid container justifyContent="space-around">
+                                            <KeyboardDatePicker
+                                                className="sele"
+                                                disableToolbar
+                                                
+                                                locale={ptBR}
+                                                variant="inline"
+                                                format="yyyy/MM/dd"
+                                                margin="normal"
+                                                id="date-picker-inline"
+                                                label="Data Lançamento"
+                                                value={selectedDate}
+                                                onChange={handleDateChange}
+                                                KeyboardButtonProps={{
+                                                    'aria-label': 'change date',
+                                                }}
+                                            />
+                                        </Grid>
+                                    </MuiPickersUtilsProvider>
                                 </FormGroup>
+                            </Col>
+                            <Col sm={12} md={12} lg={4} xl={4}>
+                                <FormGroup >
+                                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                        <Grid container justifyContent="space-around">
+                                            <KeyboardDatePicker
+                                                className="sele"
+                                                disableToolbar
+                                                
+                                                locale={ptBR}
+                                                variant="inline"
+                                                format="yyyy/MM/dd"
+                                                margin="normal"
+                                                id="date-picker-inline"
+                                                label="Data Venda"
+                                                value={selectedDate2}
+                                                onChange={handleDateChange2}
+                                                KeyboardButtonProps={{
+                                                    'aria-label': 'change date',
+                                                }}
+                                            />
+                                        </Grid>
+                                    </MuiPickersUtilsProvider>
+                                </FormGroup>
+                            </Col>
+                            <Col sm={12} md={12} lg={4} xl={4}>
+                                <FormGroup>
+                                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                        <Grid container justifyContent="space-around">
+                                            <KeyboardDatePicker
+                                                className="sele"
+                                                disableToolbar
+                                                
+                                                locale={ptBR}
+                                                variant="inline"
+                                                format="yyyy/MM/dd"
+                                                margin="normal"
+                                                id="date-picker-inline"
+                                                label="Data Pré Lançamento"
+                                                value={selectedDate3}
+                                                onChange={handleDateChange3}
+                                                KeyboardButtonProps={{
+                                                    'aria-label': 'change date',
+                                                }}
+                                            />
+                                        </Grid>
+                                    </MuiPickersUtilsProvider>
+                                </FormGroup>
+
                             </Col>
                         </Row>
                         <Row>
-                            <Col>
+                            <Col >
                                 <Button onClick={insertrevista} type="submit" className="salvar" color="primary">Salvar</Button>{' '}
                             </Col>
                         </Row>

@@ -7,16 +7,16 @@ import MenuSuperior from '../menuSuperior/MenuSuperior';
 
 
 const ConsultaGrupoFor = (props) => {
-  const [grupofor, setGrupofor] = useState([]);
+    const [grupofor, setGrupofor] = useState([]);
 
-  const grupofor251 = useCallback(() => {
-      axios.get('http://192.168.0.62:3334/SelectGrupFor251Controller/')
-          .then(response => {
-              setGrupofor(response.data);
-              console.log(response.data)
-          })
-  },
-      []);
+    const grupofor251 = useCallback(() => {
+        axios.get('http://192.168.0.62:3334/SelectGrupFor251Controller/')
+            .then(response => {
+                setGrupofor(response.data);
+                console.log(response.data)
+            })
+    },
+        []);
 
     return (
         <React.Fragment>
@@ -25,35 +25,39 @@ const ConsultaGrupoFor = (props) => {
                 <Container className="themed-container" fluid={true}>
                     <Form>
                         <Row>
-                            <Col>
-                                <FormGroup>
-                                    <DropdownToggle onClick={grupofor251} caret color="primary" className="botao">
-                                        Buscar
-                                    </DropdownToggle>
-                                </FormGroup>
+                            <Col >
+                                <center>
+                                    <FormGroup  >
+                                        <Button onClick={grupofor251} className="botao " color="primary">Buscar</Button> {/* chamando a função handlelogin que é de direcionamento das rotas */}
+                                    </FormGroup>
+                                </center>
                             </Col>
                         </Row>
-                        <Row>
-                            <FormGroup className="tabela">
-                                <Table>
-                                    <thead>
-                                        <tr>
-                                            <th>Cód</th>
-                                            <th>Descrição</th>
-                                        </tr>
-                                    </thead>
-                                    {grupofor.map((grupofor, idx) => (
-
-                                        <tbody key={idx} grupofor={grupofor}>
-                                            <td>{grupofor.codigogrupo}</td>
-                                            <td>{grupofor.descricao}</td>
-                                        </tbody>
-                                    ))}
-
-                                </Table>
-                            </FormGroup>
-                        </Row>
                     </Form>
+                    <Row>
+                        <Form id="altura">
+                            <Col sm="12" md={{ size: 6, offset: 3 }} >
+                                <FormGroup className="tabela">
+                                    <Table bordered style={{ margin: '5% 0 0 0' }}>
+                                        <thead>
+                                            <tr>
+                                                <th>Cód</th>
+                                                <th>Descrição</th>
+                                            </tr>
+                                        </thead>
+                                        {grupofor.map((grupofor, idx) => (
+
+                                            <tbody key={idx} grupofor={grupofor}>
+                                                <td>{grupofor.codigogrupo}</td>
+                                                <td>{grupofor.descricao}</td>
+                                            </tbody>
+                                        ))}
+
+                                    </Table>
+                                </FormGroup>
+                            </Col>
+                        </Form>
+                    </Row>
                 </Container>
             </div>
         </React.Fragment>

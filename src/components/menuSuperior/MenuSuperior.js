@@ -11,15 +11,20 @@ const MenuSuperior = (props) => {
 
   return (
     <div>
-      <Navbar expand="md">
+      <Navbar className="nav" expand="md">
         <NavbarBrand href="/"><img src={logo} className="imagen"></img></NavbarBrand>
         <NavbarToggler onClick={toggle} className="Hamburger" />
         <Collapse isOpen={isOpen} navbar>
           <Nav>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
+            <UncontrolledDropdown nav inNavbar href="/cadastrofornecedor">
+              <DropdownToggle nav caret >
                 CADASTRO FORNECEDOR
               </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem href="/cadastrofornecedor">
+                  Início
+                </DropdownItem>
+              </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
           <Nav>
@@ -67,12 +72,12 @@ const MenuSuperior = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <Nav>
-            <NavItem id="BotaoSair">
+          <Nav className="BotaoSair" >
+            <NavItem >
               <NavLink href="/" className="btn"><i className="material-icons">exit_to_app</i>SAIR</NavLink>
             </NavItem>
           </Nav>
-         
+
         </Collapse>
       </Navbar>
     </div >

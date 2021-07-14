@@ -10,6 +10,9 @@ import api from "../../Api";
 
 const CssTextField = withStyles({
     root: {
+        "& input": {
+            color: "white"
+        },
         "& label.Mui-focused": {
             color: "white"
         },
@@ -98,7 +101,7 @@ const Login = (props) => {
                                     <CssTextField
                                         className="Grupo1"
                                         id="standard-basic"
-                                        label="Email"
+                                        label="Usuário"
                                         type="Text"
                                         value={usu_login} //passando valor para o estado de login 
                                         onChange={onChange1} //chamando a função de estados
@@ -124,7 +127,7 @@ const Login = (props) => {
                         <Col >
                            <center>
                                 <FormGroup  >
-                                  <Button onClick={handleLogin} className="botao btn btn-light">Login</Button> {/* chamando a função handlelogin que é de direcionamento das rotas */}
+                                  <Button onClick={handleLogin} type="submit" className="botao btn btn-light">Login</Button> {/* chamando a função handlelogin que é de direcionamento das rotas */}
                                 </FormGroup>
                             </center>
                         </Col>

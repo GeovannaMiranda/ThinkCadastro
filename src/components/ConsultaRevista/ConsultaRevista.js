@@ -4,6 +4,7 @@ import api from '../../Api';
 import axios from 'axios';
 import MenuSuperior from '../menuSuperior/MenuSuperior'
 import { FormControl } from '@material-ui/core';
+import toDate from 'date-fns/esm/toDate/index';
 
 const ConsultaRevista = (props) => {
     const [crevista, setCrevista] = useState([]);
@@ -23,24 +24,21 @@ const ConsultaRevista = (props) => {
             <MenuSuperior />
             <div className="font fundo">
                 <Container className="themed-container" fluid={true}>
-                    <Form >
-                        <Row>
-                            <Col>
-                                <FormGroup>
-                                    <FormControl className="buscar">
-                                        <Button onClick={revista} caret color="primary" className="botao">
-                                            Buscar
-                                        </Button>
-                                    </FormControl>
+                    <Row>
+                        <Form>
+                            <center>
+                                <FormGroup >
+                                    <Button onClick={revista} className="botao " color="primary">Buscar</Button> {/* chamando a função handlelogin que é de direcionamento das rotas */}
                                 </FormGroup>
+                            </center>
 
-                            </Col>
-                        </Row>
-                    </Form>
-                    <Form>
-                        <Row>
-                            <FormGroup>
-                                    <Table>
+                        </Form>
+                    </Row>
+                    <Row>
+                        <Form id="altura">
+                            <Col sm="12" md={{ size: 6, offset: 3 }} >
+                                <FormGroup className="tabela">
+                                    <Table bordered style={{margin:'5% 0 0 0'}}>
                                         <thead>
                                             <tr>
                                                 <th>Cód</th>
@@ -50,14 +48,15 @@ const ConsultaRevista = (props) => {
                                         {crevista.map((crevista, idx) => (
 
                                             <tbody key={idx} crevista={crevista}>
-                                                <td>{crevista.rev_num_rev}</td>
+                                                <td scope="row">{crevista.rev_num_rev}</td>
                                                 <td>{crevista.rev_nom}</td>
                                             </tbody>
                                         ))}
                                     </Table>
-                            </FormGroup>
-                        </Row>
-                    </Form>
+                                </FormGroup>
+                            </Col>
+                        </Form>
+                    </Row>
                 </Container>
             </div>
 
