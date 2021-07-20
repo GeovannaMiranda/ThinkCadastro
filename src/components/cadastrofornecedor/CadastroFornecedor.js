@@ -221,7 +221,7 @@ const CadastroFornecedor = (props) => {
 
     const [selectrevista, setSelectrevista] = useState([])
     useEffect(() => {
-        axios.get('http://192.168.0.62:3334/selectrevista/')
+        axios.get('http://192.168.0.62:3334/SelectRevFor251/')
             .then(response => {
                 setSelectrevista(response.data);
                 console.log(response.data)
@@ -339,8 +339,8 @@ const CadastroFornecedor = (props) => {
                                          
                                         >
                                             <MenuItem   selected disabled value="">Selecione Opção</MenuItem>
-                                            <MenuItem value="1">Revista</MenuItem>
-                                            <MenuItem value="2">Paralelo</MenuItem>
+                                            <MenuItem value="0">Revista</MenuItem>
+                                            <MenuItem value="1">Paralelo</MenuItem>
                                         </Select>
                                     </FormControl>
                                 </FormGroup>
@@ -453,7 +453,7 @@ const CadastroFornecedor = (props) => {
                         </Row>
                         <Row>
                             <Col sm={12}>
-                                <Button onClick={insertcadfornecedor} className="salvar" color="primary">Salvar</Button>{' '}
+                                <Button onClick={insertcadfornecedor} type="submit" className="salvar" color="primary">Salvar</Button>{' '}
                             </Col>
                         </Row>
                     </Form>
