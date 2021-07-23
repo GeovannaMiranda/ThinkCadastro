@@ -212,12 +212,21 @@ const CadastroFornecedor = (props) => {
        console.log(value)
     }
 
+    const [forabrev, setForabrev] = useState(null);
+
+    function onChange16 (ev){
+        const{
+            nome,value
+        } = ev.target
+        setForabrev(value)
+    }
+
     const insertcadfornecedor = useCallback(() => {
         
-        axios.post('http://192.168.0.62:3334/insert/' + codigo + '/' + nome + '/' + primeironome + '/' + seguimento + '/' + seguimentogestao + '/' + revistaparalelo + '/'+ revista + '/' + comissao + '/' + acrescimo + '/' + vinculo + '/' + cpfcnpj + '/' + grupovin + '/' + grupofor + '/' + grupo + '/' + ativo +'') 
+        axios.post('http://192.168.0.62:3334/insert/' + codigo + '/' + nome + '/' + primeironome + '/' + seguimento + '/' + seguimentogestao + '/' + revistaparalelo + '/'+ revista + '/' + comissao + '/' + acrescimo + '/' + vinculo + '/' + cpfcnpj + '/' + grupovin + '/' + grupofor + '/' + grupo + '/' + ativo + '/' + forabrev + '') 
     },
 
-    [codigo,nome,primeironome,seguimento,seguimentogestao, revistaparalelo, revista,comissao,acrescimo,vinculo,cpfcnpj,grupovin,grupofor,grupo,ativo]);
+    [codigo,nome,primeironome,seguimento,seguimentogestao, revistaparalelo, revista,comissao,acrescimo,vinculo,cpfcnpj,grupovin,grupofor,grupo,ativo,forabrev]);
 
     const [selectrevista, setSelectrevista] = useState([])
     useEffect(() => {
@@ -237,7 +246,7 @@ const CadastroFornecedor = (props) => {
                 <Container className="container-theme" fluid={true}>
                     <Form>
                         <Row>
-                            <Col sm={12} md={4} lg={4} xl={4}>
+                            <Col sm={12} md={4} lg={4} xl={3}>
                                 <FormGroup >
                                     <CssTextField
                                         onChange={onChange5}
@@ -248,7 +257,7 @@ const CadastroFornecedor = (props) => {
                                     />
                                 </FormGroup>
                             </Col>
-                            <Col sm={12} md={4} lg={4} xl={4}>
+                            <Col sm={12} md={4} lg={4} xl={3}>
                                 <FormGroup>
                                     <CssTextField
                                         onChange={onChange6}
@@ -259,7 +268,19 @@ const CadastroFornecedor = (props) => {
                                     />
                                 </FormGroup>
                             </Col>
-                            <Col sm={12} md={4} lg={4} xl={4}>
+                            <Col sm={12} md={4} lg={4} xl={3}>
+                                <FormGroup>
+                                    <CssTextField
+                                        onChange={onChange16}
+                                        className="Grupo1"
+                                        id="standard-basic"
+                                        label="Nome Abreviado"
+                                        type="Text"
+                                        inputProps={{maxLength: 15}}                                       
+                                    />
+                                </FormGroup>
+                            </Col>
+                            <Col sm={12} md={4} lg={4} xl={3}>
                                 <FormGroup>
                                     <CssTextField
                                         onChange={onChange7}
